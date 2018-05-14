@@ -269,6 +269,7 @@ export class TypescriptStrategy implements MomoThePug.ILanguageStrategy {
             transformation: transformations
         };
     }
+
 }
 
 /**

@@ -4,19 +4,28 @@ import * as vscode from 'vscode';
 import { TypescriptCodeGen } from "./langs/Typescript";
 import { MomoThePug } from "./Definitions";
 
+const ConfigurationSectionName = "tsattribute-tools";
+
 /**
  * TODO: read targets from menu
- * TODO: read configuration from vscode config 
  * TODO: deploy
  */
 export function activate(context: vscode.ExtensionContext) {
-    let disposable = vscode.commands.registerCommand('extension.tsattributeTools', () => {
+    let disposable = vscode.commands.registerCommand('extension.tsattribute-tools', () => {
         let editor = vscode.window.activeTextEditor;
         if (editor && isTypeScriptDocument(editor.document)) {
-            replaceCode(editor, TypescriptCodeGen.generator(), [MomoThePug.Transformable.GETTER, MomoThePug.Transformable.SETTER, MomoThePug.Transformable.ATTRIBUTE]);
+            replaceCode(editor, TypescriptCodeGen.generator(createExtensionConfiguration()), [MomoThePug.Transformable.GETTER, MomoThePug.Transformable.SETTER, MomoThePug.Transformable.ATTRIBUTE]);
         }
     });
     context.subscriptions.push(disposable);
+}
+
+function createExtensionConfiguration(): MomoThePug.ITranspilerConfiguration {
+    const workspaceConfiguration = vscode.workspace.getConfiguration(ConfigurationSectionName);
+    const comments: boolean = workspaceConfiguration.get("tsattribute-tools.comments", false);
+    return {
+        comments: comments
+    };
 }
 
 /**

@@ -11,13 +11,24 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.tsattributeTools"
+        "onCommand:extension.tsattribute-tools"
     ],
     "main": "./out/extension",
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "tsattribute-tools configuration",
+            "properties": {
+                "tsattribute-tools.comments": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Generate comments for getters, setters and methods."
+                }
+            }
+        },
         "commands": [
             {
-                "command": "extension.tsattributeTools",
+                "command": "extension.tsattribute-tools",
                 "title": "Generate code from typescript attributes"
             }
         ]
