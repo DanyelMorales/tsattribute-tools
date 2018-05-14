@@ -10,11 +10,16 @@
             "isBackground": true,
             "presentation": {
                 "reveal": "never"
-            },
+            }
+        },
+        {
+            "type": "npm",
+            "script": "test",
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
         }
     ]
 }

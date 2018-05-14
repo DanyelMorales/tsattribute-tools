@@ -11,14 +11,14 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.tsattributeTools"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.tsattributeTools",
+                "title": "Generate code from typescript attributes"
             }
         ]
     },
@@ -27,13 +27,22 @@
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        "_test_": "npm run compile && node ./node_modules/vscode/bin/test",
+        "test": "mocha -r ts-node/register -r tsconfig-paths/register src/**/*.test.ts"
     },
     "devDependencies": {
         "typescript": "^2.6.1",
         "vscode": "^1.1.6",
         "tslint": "^5.8.0",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "@types/chai": "^4.0.4",
+        "@types/mocha": "^2.2.42",
+        "ts-node": "^3.3.0",
+        "tsconfig-paths": "^3.1.1",
+        "tspath": "^1.2.10",
+        "chai": "^4.1.2"
+    },
+    "dependencies": {
+        "underscore": "^1.9.0"
     }
 }

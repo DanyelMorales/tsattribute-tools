@@ -1,29 +1,48 @@
 'use strict';
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+
 import * as vscode from 'vscode';
+import { TypescriptCodeGen } from "./langs/Typescript";
+import { MomoThePug } from "./Definitions";
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+/**
+ * TODO: read targets from menu
+ * TODO: read configuration from vscode config 
+ * TODO: deploy
+ */
 export function activate(context: vscode.ExtensionContext) {
-
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "tsattribute-tools" is now active!');
-
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.sayHello', () => {
-        // The code you place here will be executed every time your command is executed
-
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
+    let disposable = vscode.commands.registerCommand('extension.tsattributeTools', () => {
+        let editor = vscode.window.activeTextEditor;
+        if (editor && isTypeScriptDocument(editor.document)) {
+            replaceCode(editor, TypescriptCodeGen.generator(), [MomoThePug.Transformable.GETTER, MomoThePug.Transformable.SETTER, MomoThePug.Transformable.ATTRIBUTE]);
+        }
     });
-
     context.subscriptions.push(disposable);
 }
 
-// this method is called when your extension is deactivated
+/**
+ * if current editor language is typescript
+ * @param document
+ * TODO: implement strategy verification (by language)
+ */
+function isTypeScriptDocument(document: vscode.TextDocument) {
+    return (
+        document.languageId === "typescript" ||
+        document.languageId === "typescriptreact"
+    );
+}
+
+function replaceCode(editor: vscode.TextEditor, strat: MomoThePug.ILangCodeGen, out: MomoThePug.Transformable[]) {
+    const selection = editor.selection;
+    const text = editor.document.getText(selection);
+    const code: string = strat.extract(text, out);
+    const res = [vscode.TextEdit.replace(
+        new vscode.Range(selection.start, selection.end),
+        code
+    )];
+    const edit = new vscode.WorkspaceEdit();
+    edit.set(editor.document.uri, res);
+    vscode.workspace.applyEdit(edit);
+}
+
 export function deactivate() {
 }
