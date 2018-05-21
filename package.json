@@ -2,7 +2,7 @@
     "name": "tsattribute-tools",
     "displayName": "tsattribute-tools",
     "description": "Tools to improve coding and code generation for typescript attributes",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "momoThePug",
     "engines": {
         "vscode": "^1.22.0"
@@ -11,7 +11,10 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.tsattribute-tools"
+        "onCommand:tsattribute-tools.buildcode.getterAndSetter",
+        "onCommand:tsattribute-tools.buildcode.getter",
+        "onCommand:tsattribute-tools.buildcode.setter",
+        "onCommand:tsattribute-tools.buildcode.attributes"
     ],
     "main": "./out/extension",
     "contributes": {
@@ -28,10 +31,47 @@
         },
         "commands": [
             {
-                "command": "extension.tsattribute-tools",
-                "title": "Generate code from typescript attributes"
+                "command": "tsattribute-tools.buildcode.getterAndSetter",
+                "title": "Create Getters and setters"
+            },
+            {
+                "command": "tsattribute-tools.buildcode.attributes",
+                "title": "Rename attributes"
+            },
+            {
+                "command": "tsattribute-tools.buildcode.getter",
+                "title": "Create Getters"
+            },
+            {
+                "command": "tsattribute-tools.buildcode.setter",
+                "title": "Create Setters"
             }
-        ]
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "tsattribute-tools.buildcode.getter",
+                    "when": "editorHasSelection",
+                    "group": "navigation@11"
+                },
+                {
+                    "command": "tsattribute-tools.buildcode.setter",
+                    "when": "editorHasSelection",
+                    "group": "navigation@12"
+                },
+                {
+                    "command": "tsattribute-tools.buildcode.getterAndSetter",
+                    "when": "editorHasSelection",
+                    "group": "navigation@13"
+                },
+                {
+                    "command": "tsattribute-tools.buildcode.attributes",
+                    "when": "editorHasSelection",
+                    "group": "navigation@14"
+                }
+            ],
+            "commandPalette": []
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",

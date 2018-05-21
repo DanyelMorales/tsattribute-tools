@@ -11,13 +11,34 @@ const ConfigurationSectionName = "tsattribute-tools";
  * TODO: deploy
  */
 export function activate(context: vscode.ExtensionContext) {
-    let disposable = vscode.commands.registerCommand('extension.tsattribute-tools', () => {
+    let gettersAndSetters = vscode.commands.registerCommand('tsattribute-tools.buildcode.getterAndSetter', () => {
         let editor = vscode.window.activeTextEditor;
         if (editor && isTypeScriptDocument(editor.document)) {
             replaceCode(editor, TypescriptCodeGen.generator(createExtensionConfiguration()), [MomoThePug.Transformable.GETTER, MomoThePug.Transformable.SETTER, MomoThePug.Transformable.ATTRIBUTE]);
         }
     });
-    context.subscriptions.push(disposable);
+    let getters = vscode.commands.registerCommand('tsattribute-tools.buildcode.getter', () => {
+        let editor = vscode.window.activeTextEditor;
+        if (editor && isTypeScriptDocument(editor.document)) {
+            replaceCode(editor, TypescriptCodeGen.generator(createExtensionConfiguration()), [MomoThePug.Transformable.GETTER, MomoThePug.Transformable.ATTRIBUTE]);
+        }
+    });
+    let setters = vscode.commands.registerCommand('tsattribute-tools.buildcode.setter', () => {
+        let editor = vscode.window.activeTextEditor;
+        if (editor && isTypeScriptDocument(editor.document)) {
+            replaceCode(editor, TypescriptCodeGen.generator(createExtensionConfiguration()), [MomoThePug.Transformable.SETTER, MomoThePug.Transformable.ATTRIBUTE]);
+        }
+    });
+    let attributes = vscode.commands.registerCommand('tsattribute-tools.buildcode.attributes', () => {
+        let editor = vscode.window.activeTextEditor;
+        if (editor && isTypeScriptDocument(editor.document)) {
+            replaceCode(editor, TypescriptCodeGen.generator(createExtensionConfiguration()), [MomoThePug.Transformable.ATTRIBUTE]);
+        }
+    });
+    context.subscriptions.push(attributes);
+    context.subscriptions.push(gettersAndSetters);
+    context.subscriptions.push(getters);
+    context.subscriptions.push(setters);
 }
 
 function createExtensionConfiguration(): MomoThePug.ITranspilerConfiguration {
