@@ -11,10 +11,7 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:tsattribute-tools.buildcode.getterAndSetter",
-        "onCommand:tsattribute-tools.buildcode.getter",
-        "onCommand:tsattribute-tools.buildcode.setter",
-        "onCommand:tsattribute-tools.buildcode.attributes"
+        "onLanguage:typescript"
     ],
     "main": "./out/extension",
     "contributes": {
