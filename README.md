@@ -8,13 +8,13 @@ Transforms typescript attributes into getter & setter, renaming original attribu
 - Renames attributes identifier
 
 #### Transform getters
-![Getter transformation](/assets/img/getter.gif)
+![Getter transformation](assets/img/getter.gif)
 #### Transform setters
-![Getter transformation](/assets/img/setter.gif)
+![Getter transformation](assets/img/setter.gif)
 #### Transform setters & getters
-![Getter transformation](/assets/img/getters_setters.gif)
+![Getter transformation](assets/img/getters_setters.gif)
 #### Rename attributes name
-![Getter transformation](/assets/img/rename.gif)
+![Getter transformation](assets/img/rename.gif)
 
 ## Requirements
 - Typescript 2.8.3
