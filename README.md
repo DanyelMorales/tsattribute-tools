@@ -1,65 +1,46 @@
-# tsattribute-tools README
+# Getter & Setter Generator 
 
-This is the README for your extension "tsattribute-tools". After writing up a brief description, we recommend including the following sections.
+Transforms typescript attributes into getter & setter, renaming original attribute's name.
 
 ## Features
+- Transforms attributes into getters
+- Transforms attributes into setters
+- Renames attributes identifier
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+#### Transform getters
+![Getter transformation](/assets/img/getter.gif)
+#### Transform setters
+![Getter transformation](/assets/img/setter.gif)
+#### Transform setters & getters
+![Getter transformation](/assets/img/getters_setters.gif)
+#### Rename attributes name
+![Getter transformation](/assets/img/rename.gif)
 
 ## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Typescript 2.8.3
+- Visual Studio code 1.23.1
 
 ## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `tsattribute-tools.comments`: enable/disable comments generation
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+* Please report any issue to help me improve this extension
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+Current available version logs.
 
 ### 1.0.0
 
-Initial release of ...
+Initial release of tsattributes-tools:
 
-### 1.0.1
+- Getter generation support
+- Setter generation support
+- Attributes renaming support
 
-Fixed issue #.
 
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
+-----------------------------------------------------------------------------------------------------
 **Enjoy!**

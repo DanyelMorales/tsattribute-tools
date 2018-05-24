@@ -1,3 +1,6 @@
+/**
+ * @author Daniel Vera Morales
+ */
 'use strict';
 
 import * as vscode from 'vscode';

@@ -1,14 +1,14 @@
 {
     "name": "tsattribute-tools",
     "displayName": "tsattribute-tools",
-    "description": "Tools to improve coding and code generation for typescript attributes",
+    "description": "Typescript getter & setter generator from declared attributes",
     "version": "1.0.0",
     "publisher": "momoThePug",
     "engines": {
         "vscode": "^1.22.0"
     },
     "categories": [
-        "Other"
+        "Languages", "Typescript", "Generator"
     ],
     "activationEvents": [
         "onLanguage:typescript"
@@ -22,7 +22,7 @@
                 "tsattribute-tools.comments": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Generate comments for getters, setters and methods."
+                    "description": "Generate comments for getters, setters and members."
                 }
             }
         },
