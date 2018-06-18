@@ -7,13 +7,13 @@ Transforms typescript attributes into getter & setter, renaming original attribu
 - Transforms attributes into setters
 - Renames attributes identifier
 
-#### Transform getters
+#### Transform getters (`alt+s`)
 ![Getter transformation](assets/img/getter.gif)
-#### Transform setters
+#### Transform setters (`alt+d`)
 ![Getter transformation](assets/img/setter.gif)
-#### Transform setters & getters
+#### Transform setters & getters (`alt+f`)
 ![Getter transformation](assets/img/getters_setters.gif)
-#### Rename attributes name
+#### Rename attributes name (`alt+a`)
 ![Getter transformation](assets/img/rename.gif)
 
 ## Requirements

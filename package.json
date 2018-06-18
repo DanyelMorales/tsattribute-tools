@@ -49,26 +49,47 @@
                 "title": "Create Setters"
             }
         ],
+        "keybindings": [{
+            "key": "alt+a",
+            "command": "tsattribute-tools.buildcode.attributes",
+            "when": "editorHasSelection && editorLangId == 'typescript'"
+        },
+        {
+            "key": "alt+s",
+            "command": "tsattribute-tools.buildcode.getter",
+            "when": "editorHasSelection && editorLangId == 'typescript'"
+        },
+        {
+            "key": "alt+d",
+            "command": "tsattribute-tools.buildcode.setter",
+            "when": "editorHasSelection && editorLangId == 'typescript'"
+        },
+        {
+            "key": "alt+f",
+            "command": "tsattribute-tools.buildcode.getterAndSetter",
+            "when": "editorHasSelection && editorLangId == 'typescript'"
+        }
+    ],
         "menus": {
             "editor/context": [
                 {
                     "command": "tsattribute-tools.buildcode.getter",
-                    "when": "editorHasSelection",
+                    "when": "editorHasSelection && editorLangId == 'typescript'",
                     "group": "navigation@11"
                 },
                 {
                     "command": "tsattribute-tools.buildcode.setter",
-                    "when": "editorHasSelection",
+                    "when": "editorHasSelection && editorLangId == 'typescript'",
                     "group": "navigation@12"
                 },
                 {
                     "command": "tsattribute-tools.buildcode.getterAndSetter",
-                    "when": "editorHasSelection",
+                    "when": "editorHasSelection && editorLangId == 'typescript'",
                     "group": "navigation@13"
                 },
                 {
                     "command": "tsattribute-tools.buildcode.attributes",
-                    "when": "editorHasSelection",
+                    "when": "editorHasSelection && editorLangId == 'typescript'",
                     "group": "navigation@14"
                 }
             ],
