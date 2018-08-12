@@ -49,27 +49,28 @@
                 "title": "Create Setters"
             }
         ],
-        "keybindings": [{
-            "key": "alt+a",
-            "command": "tsattribute-tools.buildcode.attributes",
-            "when": "editorHasSelection && editorLangId == 'typescript'"
-        },
-        {
-            "key": "alt+s",
-            "command": "tsattribute-tools.buildcode.getter",
-            "when": "editorHasSelection && editorLangId == 'typescript'"
-        },
-        {
-            "key": "alt+d",
-            "command": "tsattribute-tools.buildcode.setter",
-            "when": "editorHasSelection && editorLangId == 'typescript'"
-        },
-        {
-            "key": "alt+f",
-            "command": "tsattribute-tools.buildcode.getterAndSetter",
-            "when": "editorHasSelection && editorLangId == 'typescript'"
-        }
-    ],
+        "keybindings": [
+            {
+                "key": "alt+a",
+                "command": "tsattribute-tools.buildcode.attributes",
+                "when": "editorHasSelection && editorLangId == 'typescript'"
+            },
+            {
+                "key": "alt+s",
+                "command": "tsattribute-tools.buildcode.getter",
+                "when": "editorHasSelection && editorLangId == 'typescript'"
+            },
+            {
+                "key": "alt+d",
+                "command": "tsattribute-tools.buildcode.setter",
+                "when": "editorHasSelection && editorLangId == 'typescript'"
+            },
+            {
+                "key": "alt+f",
+                "command": "tsattribute-tools.buildcode.getterAndSetter",
+                "when": "editorHasSelection && editorLangId == 'typescript'"
+            }
+        ],
         "menus": {
             "editor/context": [
                 {
@@ -105,7 +106,6 @@
         "test": "mocha -r ts-node/register -r tsconfig-paths/register src/**/*.test.ts"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
         "vscode": "^1.1.6",
         "tslint": "^5.8.0",
         "@types/node": "^7.0.43",
@@ -117,6 +117,7 @@
         "chai": "^4.1.2"
     },
     "dependencies": {
+        "typescript": "^2.6.1",
         "underscore": "^1.9.0"
     }
 }
