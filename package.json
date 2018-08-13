@@ -106,7 +106,6 @@
         "test": "mocha -r ts-node/register -r tsconfig-paths/register src/**/*.test.ts"
     },
     "devDependencies": {
-        "vscode": "^1.1.6",
         "tslint": "^5.8.0",
         "@types/chai": "^4.0.4",
         "@types/mocha": "^2.2.42",
@@ -118,6 +117,7 @@
     "dependencies": {
         "@types/node": "^7.0.43",
         "typescript": "^2.6.1",
-        "underscore": "^1.9.0"
+        "underscore": "^1.9.0",
+        "vscode": "^1.1.6"
     }
 }
